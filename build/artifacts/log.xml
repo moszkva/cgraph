@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="SuperClosure" tests="13" assertions="34" failures="0" errors="0" time="3.415959">
+    <testsuite name="Moszkva\CGraph\Test\CGraphBuilderTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphBuilderTest.php" namespace="Moszkva\CGraph\Test" fullPackage="Moszkva.CGraph.Test" tests="4" assertions="5" failures="0" errors="0" time="0.038186">
+      <testcase name="testSetCanvasSize" class="Moszkva\CGraph\Test\CGraphBuilderTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphBuilderTest.php" line="11" assertions="2" time="0.024799"/>
+      <testcase name="testSetPoint" class="Moszkva\CGraph\Test\CGraphBuilderTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphBuilderTest.php" line="24" assertions="1" time="0.006236"/>
+      <testcase name="testSetBackgroundCharacter" class="Moszkva\CGraph\Test\CGraphBuilderTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphBuilderTest.php" line="37" assertions="1" time="0.003722"/>
+      <testcase name="testRender" class="Moszkva\CGraph\Test\CGraphBuilderTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphBuilderTest.php" line="48" assertions="1" time="0.003429"/>
+    </testsuite>
+    <testsuite name="Moszkva\CGraph\Test\CGraphFileFactoryTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphFileFactoryTest.php" namespace="Moszkva\CGraph\Test" fullPackage="Moszkva.CGraph.Test" tests="2" assertions="11" failures="0" errors="0" time="3.331771">
+      <testcase name="testCreateResizing" class="Moszkva\CGraph\Test\CGraphFileFactoryTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphFileFactoryTest.php" line="10" assertions="2" time="2.067675"/>
+      <testcase name="testCreateProduct" class="Moszkva\CGraph\Test\CGraphFileFactoryTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphFileFactoryTest.php" line="20" assertions="9" time="1.264096"/>
+    </testsuite>
+    <testsuite name="Moszkva\CGraph\Test\CGraphImageHandlerTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphImageHandlerTest.php" namespace="Moszkva\CGraph\Test" fullPackage="Moszkva.CGraph.Test" tests="7" assertions="18" failures="0" errors="0" time="0.046002">
+      <testcase name="testOpenFile" class="Moszkva\CGraph\Test\CGraphImageHandlerTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphImageHandlerTest.php" line="9" assertions="3" time="0.008047"/>
+      <testcase name="testOpenFileUnknownFileTypeError" class="Moszkva\CGraph\Test\CGraphImageHandlerTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphImageHandlerTest.php" line="27" assertions="1" time="0.009109"/>
+      <testcase name="testOpenFileNoReadableFileError" class="Moszkva\CGraph\Test\CGraphImageHandlerTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphImageHandlerTest.php" line="35" assertions="1" time="0.003173"/>
+      <testcase name="testResize" class="Moszkva\CGraph\Test\CGraphImageHandlerTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphImageHandlerTest.php" line="40" assertions="2" time="0.005017"/>
+      <testcase name="testResizeError" class="Moszkva\CGraph\Test\CGraphImageHandlerTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphImageHandlerTest.php" line="53" assertions="1" time="0.004269"/>
+      <testcase name="testGetColorAt" class="Moszkva\CGraph\Test\CGraphImageHandlerTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphImageHandlerTest.php" line="61" assertions="3" time="0.008736"/>
+      <testcase name="testGetCharByCoordinate" class="Moszkva\CGraph\Test\CGraphImageHandlerTest" file="C:\wamp\www\testapp\cgraph\tests\Moszkva\CGraph\Test\CGraphImageHandlerTest.php" line="77" assertions="7" time="0.007651"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
