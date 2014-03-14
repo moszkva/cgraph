@@ -1,5 +1,5 @@
 {
-	"name": "Moszkva/CGraph",
+	"name": "moszkva/cgraph",
 	"description": "ASCII image generator",
 	"license": "MIT",
 	"keywords": ["ASCII", "image", "generator"],
