@@ -2,7 +2,7 @@
 
 namespace Moszkva\CGraph;
 
-interface ICGraphImageHandler
+interface IImageHandler
 {
 	public function openFile($filePath);
 	public function getImageWidth();

@@ -2,7 +2,7 @@
 
 namespace Moszkva\CGraph;
 
-class CGraphBuilder
+class Builder
 {
 	private $backgroundCharacter	= ' ';
 	private $points					= array();
@@ -10,7 +10,7 @@ class CGraphBuilder
 	private $numOfHorizontalChars	= 100;
 	private $newLineSequence		= PHP_EOL;
 	
-	public function setPoint(CGraphPoint $CGraphPoint)
+	public function setPoint(Point $CGraphPoint)
 	{
 		$this->points[$CGraphPoint->getCGraphCoordinate()->x][$CGraphPoint->getCGraphCoordinate()->y] = $CGraphPoint;
 		

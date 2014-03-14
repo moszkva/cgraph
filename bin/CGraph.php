@@ -2,18 +2,18 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Moszkva\CGraph\CGraphFileFactory;
-use Moszkva\CGraph\CGraphException;
+use Moszkva\CGraph\FileFactory;
+use Moszkva\CGraph\Exception;
 
 if(is_array($argv) && trim($argv[1])!='')
 {
-	$CGraphFileFactory = new CGraphFileFactory('c:\\wamp\\www\\testapp\\cgraph\\test.jpg');
+	$CGraphFileFactory = new FileFactory($argv[1]);
 
 	$CGraphFileFactory->create('php://output');
 }
 else
 {
-	throw new CGraphException('Input image file is a mandatory param.');
+	throw new Exception('Input image file is a mandatory param.');
 }
 
 ?>

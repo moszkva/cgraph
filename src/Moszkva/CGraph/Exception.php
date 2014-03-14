@@ -2,7 +2,7 @@
 
 namespace Moszkva\CGraph;
 
-class CGraphException extends \Exception
+class Exception extends \Exception
 {
 	
 }

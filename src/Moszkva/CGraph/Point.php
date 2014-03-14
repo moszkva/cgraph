@@ -2,12 +2,12 @@
 
 namespace Moszkva\CGraph;
 
-class CGraphPoint
+class Point
 {
 	private $CGraphCoordinate;
 	private $char;
 	
-	public function __construct(CGraphCoordinate $CGraphCoordinate, $char = "O")
+	public function __construct(Coordinate $CGraphCoordinate, $char = "O")
 	{
 		$this->CGraphCoordinate = $CGraphCoordinate;
 		$this->char				= $char;

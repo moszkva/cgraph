@@ -2,14 +2,14 @@
 
 namespace Moszkva\CGraph\Test;
 
-use Moszkva\CGraph\CGraphFileFactory;
-use Moszkva\CGraph\CGraphImageHandler;
+use Moszkva\CGraph\FileFactory;
+use Moszkva\CGraph\ImageHandler;
 
-class CGraphFileFactoryTest extends \PHPUnit_Framework_TestCase 
+class FileFactoryTest extends \PHPUnit_Framework_TestCase 
 {
 	public function testCreateResizing()
 	{
-		$CGraphFileFactory = new CGraphFileFactory(__DIR__. '/resource/factory.jpg');
+		$CGraphFileFactory = new FileFactory(__DIR__. '/resource/factory.jpg');
 		
 		$CGraphFileFactory->create('php://temp');
 		
@@ -19,11 +19,11 @@ class CGraphFileFactoryTest extends \PHPUnit_Framework_TestCase
 	
 	public function testCreateProduct()
 	{
-		$CGraphFileFactory = new CGraphFileFactory(__DIR__. '/resource/production.jpg');
+		$CGraphFileFactory = new FileFactory(__DIR__. '/resource/production.jpg');
 		
 		$content = $CGraphFileFactory->create();
 		
-		foreach(CGraphImageHandler::getCharMap() as $char)
+		foreach(ImageHandler::getCharMap() as $char)
 		{
 			$this->assertTrue(strpos($content, $char)!==FALSE);
 		}

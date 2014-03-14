@@ -2,7 +2,7 @@
 
 namespace Moszkva\CGraph;
 
-class CGraphImageHandler implements ICGraphImageHandler
+class ImageHandler implements IImageHandler
 {
 	/**
 	 * @var Resource
@@ -21,14 +21,14 @@ class CGraphImageHandler implements ICGraphImageHandler
 	{
 		$this->openFile($filePath);
 		
-		$this->charMapCount = count(CGraphImageHandler::$charMap);
+		$this->charMapCount = count(ImageHandler::$charMap);
 	}
 	
 	public function openFile($filePath)
 	{
 		if(!is_file($filePath))
 		{
-			throw new CGraphImageHandlerException('File is not readable.');
+			throw new ImageHandlerException('File is not readable.');
 		}
 		
 		switch($this->getFileExtensionByFileName($filePath))
@@ -47,7 +47,7 @@ class CGraphImageHandler implements ICGraphImageHandler
 			break;
 		
 			default:
-				throw new CGraphImageHandlerException('Unknown file type. Supported file types: jpg, png, gif');
+				throw new ImageHandlerException('Unknown file type. Supported file types: jpg, png, gif');
 			break;
 		}
 	}
@@ -77,7 +77,7 @@ class CGraphImageHandler implements ICGraphImageHandler
 	 */
 	public static function getCharMap()
 	{
-		return CGraphImageHandler::$charMap;
+		return ImageHandler::$charMap;
 	}
 		
 	public function resize($newWidth, $newHeight)
@@ -90,7 +90,7 @@ class CGraphImageHandler implements ICGraphImageHandler
 		}
 		else
 		{
-			throw new CGraphImageHandlerException('Image resizing failed.');
+			throw new ImageHandlerException('Image resizing failed.');
 		}
 	}
 	
@@ -113,7 +113,7 @@ class CGraphImageHandler implements ICGraphImageHandler
 
 		$sat = ($r + $g + $b) / (255 * 3);
 
-		return CGraphImageHandler::$charMap[ (int)( $sat * ($this->charMapCount - 1) ) ];
+		return ImageHandler::$charMap[ (int)( $sat * ($this->charMapCount - 1) ) ];
 	}
 	
 	public function __destruct()

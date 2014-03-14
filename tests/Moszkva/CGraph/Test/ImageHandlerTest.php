@@ -2,44 +2,44 @@
 
 namespace Moszkva\CGraph\Test;
 
-use \Moszkva\CGraph\CGraphImageHandler;
+use \Moszkva\CGraph\ImageHandler;
 
-class CGraphImageHandlerTest extends \PHPUnit_Framework_TestCase 
+class ImageHandlerTest extends \PHPUnit_Framework_TestCase 
 {
 	public function testOpenFile()
 	{
-		$CGraphImageHandler = new CGraphImageHandler(__DIR__. '/resource/empty.jpg');
+		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/empty.jpg');
 		
 		$this->assertEquals(10, $CGraphImageHandler->getImageWidth());
 		
-		$CGraphImageHandler = new CGraphImageHandler(__DIR__. '/resource/empty.png');
+		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/empty.png');
 		
 		$this->assertEquals(10, $CGraphImageHandler->getImageHeight());
 		
-		$CGraphImageHandler = new CGraphImageHandler(__DIR__. '/resource/empty.gif');
+		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/empty.gif');
 		
 		$this->assertEquals(10, $CGraphImageHandler->getImageWidth());
 	}
 	
 	/**
-	 * @expectedException \Moszkva\CGraph\CGraphImageHandlerException
+	 * @expectedException \Moszkva\CGraph\ImageHandlerException
 	 */
 	public function testOpenFileUnknownFileTypeError()
 	{
-		$CGraphImageHandler = new CGraphImageHandler(__DIR__. '/resource/empty.bmp');		
+		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/empty.bmp');		
 	}
 	
 	/**
-	 * @expectedException \Moszkva\CGraph\CGraphImageHandlerException
+	 * @expectedException \Moszkva\CGraph\ImageHandlerException
 	 */
 	public function testOpenFileNoReadableFileError()
 	{
-		$CGraphImageHandler = new CGraphImageHandler(__DIR__. '/resource/does_not_exists');		
+		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/does_not_exists');		
 	}	
 	
 	public function testResize()
 	{
-		$CGraphImageHandler = new CGraphImageHandler(__DIR__. '/resource/empty.jpg');
+		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/empty.jpg');
 		
 		$CGraphImageHandler->resize(5, 5);
 		
@@ -48,11 +48,11 @@ class CGraphImageHandlerTest extends \PHPUnit_Framework_TestCase
 	}
 	
 	/**
-	 * @expectedException \Moszkva\CGraph\CGraphImageHandlerException
+	 * @expectedException \Moszkva\CGraph\ImageHandlerException
 	 */	
 	public function testResizeError()
 	{
-		$CGraphImageHandler = new CGraphImageHandler(__DIR__. '/resource/empty.jpg');
+		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/empty.jpg');
 		
 		@$CGraphImageHandler->resize(-10, 0);
 	}
@@ -60,15 +60,15 @@ class CGraphImageHandlerTest extends \PHPUnit_Framework_TestCase
 	
 	public function testGetColorAt()
 	{
-		$CGraphImageHandler = new CGraphImageHandler(__DIR__. '/resource/color_red.jpg');
+		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/color_red.jpg');
 		
 		$this->assertEquals(imagecolorresolve ($CGraphImageHandler->getImage(), 254, 0, 0), $CGraphImageHandler->getColorAt(1, 1));
 		
-		$CGraphImageHandler = new CGraphImageHandler(__DIR__. '/resource/color_green.jpg');
+		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/color_green.jpg');
 		
 		$this->assertEquals(imagecolorresolve ($CGraphImageHandler->getImage(), 0, 255, 1), $CGraphImageHandler->getColorAt(1, 1));		
 		
-		$CGraphImageHandler = new CGraphImageHandler(__DIR__. '/resource/color_blue.jpg');
+		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/color_blue.jpg');
 		
 		$this->assertEquals(imagecolorresolve ($CGraphImageHandler->getImage(), 0, 0, 254), $CGraphImageHandler->getColorAt(1, 1));			
 		
@@ -76,7 +76,7 @@ class CGraphImageHandlerTest extends \PHPUnit_Framework_TestCase
 	
 	public function testGetCharByCoordinate()
 	{
-		$CGraphImageHandler = new CGraphImageHandler(__DIR__. '/resource/multi_colors.jpg');		
+		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/multi_colors.jpg');		
 		
 		// Black
 		

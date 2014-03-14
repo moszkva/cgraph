@@ -2,15 +2,15 @@
 
 namespace Moszkva\CGraph\Test;
 
-use \Moszkva\CGraph\CGraphBuilder;
-use \Moszkva\CGraph\CGraphPoint;
-use \Moszkva\CGraph\CGraphCoordinate;
+use \Moszkva\CGraph\Builder;
+use \Moszkva\CGraph\Point;
+use \Moszkva\CGraph\Coordinate;
 
-class CGraphBuilderTest extends \PHPUnit_Framework_TestCase 
+class BuilderTest extends \PHPUnit_Framework_TestCase 
 {
 	public function testSetCanvasSize()
 	{
-		$CGraphBuilder = new CGraphBuilder();
+		$CGraphBuilder = new Builder();
 		
 		$CGraphBuilder->setCanvasSize(0, 0);
 		
@@ -23,11 +23,11 @@ class CGraphBuilderTest extends \PHPUnit_Framework_TestCase
 	
 	public function testSetPoint()
 	{
-		$CGraphBuilder = new CGraphBuilder();
+		$CGraphBuilder = new Builder();
 		
 		$CGraphBuilder->setCanvasSize(3, 3);
 		
-		$CGraphBuilder->setPoint(new CGraphPoint(new CGraphCoordinate(2,2), 'X'));
+		$CGraphBuilder->setPoint(new Point(new Coordinate(2,2), 'X'));
 		
 		$empty = $CGraphBuilder->getBackgroundCharacter().$CGraphBuilder->getBackgroundCharacter();
 		
@@ -36,7 +36,7 @@ class CGraphBuilderTest extends \PHPUnit_Framework_TestCase
 	
 	public function testSetBackgroundCharacter()
 	{
-		$CGraphBuilder = new CGraphBuilder();
+		$CGraphBuilder = new Builder();
 		
 		$CGraphBuilder->setCanvasSize(1, 1);
 		
@@ -47,11 +47,11 @@ class CGraphBuilderTest extends \PHPUnit_Framework_TestCase
 	
 	public function testRender()
 	{
-		$CGraphBuilder = new CGraphBuilder();
+		$CGraphBuilder = new Builder();
 		
 		$CGraphBuilder->setCanvasSize(3, 3);
 		
-		$CGraphBuilder->setPoint(new CGraphPoint(new CGraphCoordinate(2,2), 'X'));
+		$CGraphBuilder->setPoint(new Point(new Coordinate(2,2), 'X'));
 		
 		$empty = $CGraphBuilder->getBackgroundCharacter().$CGraphBuilder->getBackgroundCharacter();
 		

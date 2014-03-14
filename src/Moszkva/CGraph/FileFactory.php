@@ -2,10 +2,10 @@
 
 namespace Moszkva\CGraph;
 
-class CGraphFileFactory
+class FileFactory
 {
 	/**
-	 * @var  CGraphImageHandler
+	 * @var ImageHandler
 	 */
 	private $CGraphImageHandler;
 	
@@ -36,14 +36,14 @@ class CGraphFileFactory
 	
 	public function create($outputFilePath = '')
 	{
-		$this->CGraphImageHandler	= new CGraphImageHandler($this->sourceFilePath);
+		$this->CGraphImageHandler	= new ImageHandler($this->sourceFilePath);
 		
 		$this->initImage();
 		
 		$width			= $this->CGraphImageHandler->getImageWidth();
 		$height			= $this->CGraphImageHandler->getImageHeight();	
 		
-		$CGraphBuilder	= new CGraphBuilder();
+		$CGraphBuilder	= new Builder();
 		
 		$CGraphBuilder->setBackgroundCharacter('-');		
 		$CGraphBuilder->setCanvasSize($width, $height);
@@ -52,7 +52,7 @@ class CGraphFileFactory
 		{
 			for($x=0; $x <= $width-1; $x++)
 			{		
-				$CGraphBuilder->setPoint(new CGraphPoint(new CGraphCoordinate($x, $y), $this->CGraphImageHandler->getCharByCoordinate($x, $y)));
+				$CGraphBuilder->setPoint(new Point(new Coordinate($x, $y), $this->CGraphImageHandler->getCharByCoordinate($x, $y)));
 			}
 		}
 		
@@ -96,7 +96,6 @@ class CGraphFileFactory
 			$this->CGraphImageHandler->resize($width, $height);
 		}
 		
-		//$this->CGraphImageHandler->rotate(90, 1);
 		$this->CGraphImageHandler->setContrast(-90);
 	}
 }

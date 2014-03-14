@@ -2,7 +2,7 @@
 
 namespace Moszkva\CGraph;
 
-class CGraphCoordinate
+class Coordinate
 {
 	public $x;
 	public $y;
