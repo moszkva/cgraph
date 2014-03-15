@@ -24,3 +24,9 @@ Example:
   CGraph https://raw.github.com/moszkva/cgraph/master/tests/Moszkva/CGraph/Test/resource/test.jpg >> image.txt
   
 
+Unit testing:
+  
+  - If you have internet connection and openssl extension is loaded and directive allow_url_fopen = On, just simply run phpunit in project root.
+  - Otherwise run: phpunit --exclude-group net
+  
+
