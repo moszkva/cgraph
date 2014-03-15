@@ -1,8 +1,8 @@
 {
 	"name": "moszkva/cgraph",
-	"description": "ASCII image generator",
+	"description": "ASCII image generator. Creates ASCII char based image from image.",
 	"license": "MIT",
-	"keywords": ["ASCII", "image", "generator"],
+	"keywords": ["ASCII", "image", "generator", "ASCII art"],
     "authors": [
         {
             "name": "Gabor Szecsi (Moszkva)",
@@ -10,7 +10,8 @@
         }
     ],	
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.3.0",
+		"ext-gd": "*"
     },	
 	"autoload": {
 		"psr-0": {"Moszkva\\CGraph": "src/"}
