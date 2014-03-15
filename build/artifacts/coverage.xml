@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1394826151">
-  <project timestamp="1394826151">
+<coverage generated="1394847546">
+  <project timestamp="1394847546">
     <package name="Moszkva\CGraph">
       <file name="C:\Users\Gabor\Documents\GitHub\CGraph\src\Moszkva\CGraph/Builder.php">
         <class name="Builder" namespace="Moszkva\CGraph">
@@ -106,71 +106,80 @@
       </file>
       <file name="C:\Users\Gabor\Documents\GitHub\CGraph\src\Moszkva\CGraph/ImageHandler.php">
         <class name="ImageHandler" namespace="Moszkva\CGraph">
-          <metrics methods="12" coveredmethods="12" conditionals="0" coveredconditionals="0" statements="49" coveredstatements="49" elements="61" coveredelements="61"/>
+          <metrics methods="13" coveredmethods="12" conditionals="0" coveredconditionals="0" statements="57" coveredstatements="51" elements="70" coveredelements="63"/>
         </class>
         <line num="0" type="stmt" count="1"/>
-        <line num="20" type="method" name="__construct" crap="1" count="9"/>
+        <line num="20" type="method" name="__construct" crap="4.13" count="9"/>
         <line num="22" type="stmt" count="9"/>
-        <line num="24" type="stmt" count="7"/>
+        <line num="23" type="stmt" count="9"/>
+        <line num="24" type="stmt" count="8"/>
         <line num="25" type="stmt" count="7"/>
-        <line num="27" type="method" name="openFile" crap="6" count="9"/>
-        <line num="29" type="stmt" count="9"/>
-        <line num="30" type="stmt" count="9"/>
-        <line num="31" type="stmt" count="1"/>
-        <line num="34" type="stmt" count="8"/>
-        <line num="36" type="stmt" count="8"/>
-        <line num="37" type="stmt" count="8"/>
-        <line num="38" type="stmt" count="7"/>
-        <line num="39" type="stmt" count="7"/>
-        <line num="41" type="stmt" count="2"/>
-        <line num="42" type="stmt" count="1"/>
-        <line num="43" type="stmt" count="1"/>
-        <line num="45" type="stmt" count="2"/>
-        <line num="46" type="stmt" count="1"/>
-        <line num="47" type="stmt" count="1"/>
-        <line num="49" type="stmt" count="1"/>
-        <line num="50" type="stmt" count="1"/>
-        <line num="52" type="stmt" count="8"/>
+        <line num="26" type="stmt" count="1"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="32" type="stmt" count="1"/>
+        <line num="35" type="stmt" count="7"/>
+        <line num="36" type="stmt" count="7"/>
+        <line num="38" type="method" name="openStream" crap="6" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <line num="41" type="stmt" count="0"/>
+        <line num="42" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="46" type="method" name="openFile" crap="5" count="8"/>
+        <line num="48" type="stmt" count="8"/>
+        <line num="50" type="stmt" count="8"/>
+        <line num="51" type="stmt" count="8"/>
+        <line num="52" type="stmt" count="7"/>
         <line num="53" type="stmt" count="7"/>
-        <line num="55" type="method" name="getImageWidth" crap="1" count="5"/>
-        <line num="57" type="stmt" count="5"/>
-        <line num="60" type="method" name="getImageHeight" crap="1" count="5"/>
-        <line num="62" type="stmt" count="5"/>
-        <line num="65" type="method" name="getColorAt" crap="1" count="4"/>
-        <line num="67" type="stmt" count="4"/>
-        <line num="70" type="method" name="setContrast" crap="1" count="2"/>
-        <line num="72" type="stmt" count="2"/>
-        <line num="73" type="stmt" count="2"/>
-        <line num="78" type="method" name="getCharMap" crap="1" count="1"/>
-        <line num="80" type="stmt" count="1"/>
-        <line num="83" type="method" name="resize" crap="2" count="4"/>
-        <line num="85" type="stmt" count="4"/>
-        <line num="87" type="stmt" count="4"/>
-        <line num="88" type="stmt" count="4"/>
-        <line num="89" type="stmt" count="3"/>
-        <line num="90" type="stmt" count="3"/>
-        <line num="93" type="stmt" count="1"/>
-        <line num="95" type="stmt" count="3"/>
-        <line num="97" type="method" name="getFileExtensionByFileName" crap="1" count="8"/>
-        <line num="99" type="stmt" count="8"/>
-        <line num="101" type="stmt" count="8"/>
-        <line num="103" type="stmt" count="8"/>
-        <line num="106" type="method" name="getCharByCoordinate" crap="1" count="3"/>
-        <line num="108" type="stmt" count="3"/>
-        <line num="110" type="stmt" count="3"/>
-        <line num="111" type="stmt" count="3"/>
-        <line num="112" type="stmt" count="3"/>
-        <line num="114" type="stmt" count="3"/>
-        <line num="116" type="stmt" count="3"/>
-        <line num="119" type="method" name="__destruct" crap="2" count="7"/>
-        <line num="121" type="stmt" count="7"/>
-        <line num="122" type="stmt" count="7"/>
-        <line num="123" type="stmt" count="7"/>
-        <line num="124" type="stmt" count="7"/>
-        <line num="125" type="stmt" count="7"/>
-        <line num="127" type="method" name="getImage" crap="1" count="1"/>
-        <line num="129" type="stmt" count="1"/>
-        <metrics loc="132" ncloc="122" classes="1" methods="12" coveredmethods="12" conditionals="0" coveredconditionals="0" statements="49" coveredstatements="49" elements="61" coveredelements="61"/>
+        <line num="55" type="stmt" count="2"/>
+        <line num="56" type="stmt" count="1"/>
+        <line num="57" type="stmt" count="1"/>
+        <line num="59" type="stmt" count="2"/>
+        <line num="60" type="stmt" count="1"/>
+        <line num="61" type="stmt" count="1"/>
+        <line num="63" type="stmt" count="1"/>
+        <line num="64" type="stmt" count="1"/>
+        <line num="66" type="stmt" count="8"/>
+        <line num="67" type="stmt" count="7"/>
+        <line num="69" type="method" name="getImageWidth" crap="1" count="5"/>
+        <line num="71" type="stmt" count="5"/>
+        <line num="74" type="method" name="getImageHeight" crap="1" count="5"/>
+        <line num="76" type="stmt" count="5"/>
+        <line num="79" type="method" name="getColorAt" crap="1" count="4"/>
+        <line num="81" type="stmt" count="4"/>
+        <line num="84" type="method" name="setContrast" crap="1" count="2"/>
+        <line num="86" type="stmt" count="2"/>
+        <line num="87" type="stmt" count="2"/>
+        <line num="92" type="method" name="getCharMap" crap="1" count="1"/>
+        <line num="94" type="stmt" count="1"/>
+        <line num="97" type="method" name="resize" crap="2" count="4"/>
+        <line num="99" type="stmt" count="4"/>
+        <line num="101" type="stmt" count="4"/>
+        <line num="102" type="stmt" count="4"/>
+        <line num="103" type="stmt" count="3"/>
+        <line num="104" type="stmt" count="3"/>
+        <line num="107" type="stmt" count="1"/>
+        <line num="109" type="stmt" count="3"/>
+        <line num="111" type="method" name="getFileExtensionByFileName" crap="1" count="8"/>
+        <line num="113" type="stmt" count="8"/>
+        <line num="115" type="stmt" count="8"/>
+        <line num="117" type="stmt" count="8"/>
+        <line num="120" type="method" name="getCharByCoordinate" crap="1" count="3"/>
+        <line num="122" type="stmt" count="3"/>
+        <line num="124" type="stmt" count="3"/>
+        <line num="125" type="stmt" count="3"/>
+        <line num="126" type="stmt" count="3"/>
+        <line num="128" type="stmt" count="3"/>
+        <line num="130" type="stmt" count="3"/>
+        <line num="133" type="method" name="__destruct" crap="2" count="7"/>
+        <line num="135" type="stmt" count="7"/>
+        <line num="136" type="stmt" count="7"/>
+        <line num="137" type="stmt" count="7"/>
+        <line num="138" type="stmt" count="7"/>
+        <line num="139" type="stmt" count="7"/>
+        <line num="141" type="method" name="getImage" crap="1" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="146" ncloc="136" classes="1" methods="13" coveredmethods="11" conditionals="0" coveredconditionals="0" statements="57" coveredstatements="51" elements="70" coveredelements="62"/>
       </file>
       <file name="C:\Users\Gabor\Documents\GitHub\CGraph\src\Moszkva\CGraph/ImageHandlerException.php">
         <class name="ImageHandlerException" namespace="Moszkva\CGraph">
@@ -194,8 +203,8 @@
       </file>
     </package>
     <file name="C:\Users\Gabor\Documents\GitHub\CGraph\src\Moszkva\CGraph/IImageHandler.php">
-      <metrics loc="16" ncloc="16" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      <metrics loc="17" ncloc="17" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="8" loc="379" ncloc="357" classes="7" methods="25" coveredmethods="25" conditionals="0" coveredconditionals="0" statements="122" coveredstatements="122" elements="147" coveredelements="147"/>
+    <metrics files="8" loc="394" ncloc="372" classes="7" methods="26" coveredmethods="24" conditionals="0" coveredconditionals="0" statements="130" coveredstatements="124" elements="156" coveredelements="148"/>
   </project>
 </coverage>

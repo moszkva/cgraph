@@ -23,9 +23,8 @@ class ImageHandler implements IImageHandler
 		{
 			$this->openFile($filePath);
 		}
-		elseif(($stream = file_get_contents($filePath))!==FALSE)
+		elseif(($stream = @file_get_contents($filePath))!==FALSE && $stream!='')
 		{
-			file_put_contents('test.log', file_get_contents($filePath));
 			$this->openStream($stream);
 		}
 		else
@@ -38,7 +37,7 @@ class ImageHandler implements IImageHandler
 	
 	public function openStream($stream)
 	{
-		if(($this->image = imagecreatefromstring($stream))===FALSE)
+		if(($this->image = @imagecreatefromstring($stream))===FALSE)
 		{
 			throw new ImageHandlerException('Unknown file type. Supported file types: jpg, png, gif.');
 		}		

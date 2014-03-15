@@ -18,7 +18,17 @@ class ImageHandlerTest extends \PHPUnit_Framework_TestCase
 		
 		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/empty.gif');
 		
-		$this->assertEquals(10, $CGraphImageHandler->getImageWidth());
+		$this->assertEquals(10, $CGraphImageHandler->getImageWidth());	
+	}
+	
+	/**
+	 * @group net
+	 */
+	public function testOpenStream()
+	{
+		$CGraphImageHandler = new ImageHandler('https://raw.github.com/moszkva/cgraph/master/tests/Moszkva/CGraph/Test/resource/empty.jpg');
+		
+		$this->assertEquals(10, $CGraphImageHandler->getImageWidth());		
 	}
 	
 	/**
@@ -31,10 +41,21 @@ class ImageHandlerTest extends \PHPUnit_Framework_TestCase
 	
 	/**
 	 * @expectedException \Moszkva\CGraph\ImageHandlerException
+	 * @expectedExceptionMessage File or stream is not readable. 
 	 */
 	public function testOpenFileNoReadableFileError()
 	{
 		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/does_not_exists');		
+	}
+	
+	/**
+	 * @expectedException \Moszkva\CGraph\ImageHandlerException
+	 * @expectedExceptionMessage Unknown file type. Supported file types: jpg, png, gif.
+	 * @group net
+	 */
+	public function testOpenStreamFileTypeError()
+	{
+		$CGraphImageHandler = new ImageHandler('https://github.com/moszkva/cgraph/raw/master/tests/Moszkva/CGraph/Test/resource/empty.bmp');		
 	}	
 	
 	public function testResize()
@@ -78,20 +99,12 @@ class ImageHandlerTest extends \PHPUnit_Framework_TestCase
 	{
 		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/multi_colors.jpg');		
 		
-		// Black
-		
 		$this->assertEquals($CGraphImageHandler->getCharByCoordinate(0, 0), $CGraphImageHandler->getCharByCoordinate(49, 49));
-		
-		// Red
-		
+
 		$this->assertEquals($CGraphImageHandler->getCharByCoordinate(0, 49), $CGraphImageHandler->getCharByCoordinate(49, 0));
 		
-		// Green
-		
 		$this->assertEquals($CGraphImageHandler->getCharByCoordinate(25, 0), $CGraphImageHandler->getCharByCoordinate(25, 49));
-		
-		// Blue
-		
+
 		$this->assertEquals($CGraphImageHandler->getCharByCoordinate(0, 25), $CGraphImageHandler->getCharByCoordinate(49, 25));		
 		
 		$this->assertTrue($CGraphImageHandler->getCharByCoordinate(0, 0)!=$CGraphImageHandler->getCharByCoordinate(0, 49));
