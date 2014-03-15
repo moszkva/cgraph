@@ -1,30 +1,36 @@
 CGraph
 ======
 
-ASCII image generator
+##ASCII image generator##
 
 
 https://packagist.org/packages/moszkva/cgraph
 
-Install:
+  
+##Installation##
 
-  Composer.json:
+Installation via composer
 
-      require:  "moszkva/cgraph": "dev-master" 
+```json
+{
+   "require-dev": {
+        "moszkva/cgraph": "dev-master"
+   }
+}
+```
 
-
-Usage:
+##Usage##
 
   1. Open /bin directory
   2. Configure CGraph.bat file
   3. Run: CGraph.bat [source-file-path] >> [[dest-file-path]]
 
-Example:
+##Example##
   
   CGraph https://raw.github.com/moszkva/cgraph/master/tests/Moszkva/CGraph/Test/resource/test.jpg >> image.txt
   
 
-Unit testing:
+##Unit testing##
   
   - If you have internet connection and openssl extension is loaded and directive allow_url_fopen = On, just simply run phpunit in project root.
   - Otherwise run: phpunit --exclude-group net
