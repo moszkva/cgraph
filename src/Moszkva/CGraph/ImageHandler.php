@@ -19,18 +19,33 @@ class ImageHandler implements IImageHandler
 	
 	public function __construct($filePath)
 	{
-		$this->openFile($filePath);
+		if(is_file($filePath))
+		{
+			$this->openFile($filePath);
+		}
+		elseif(($stream = file_get_contents($filePath))!==FALSE)
+		{
+			file_put_contents('test.log', file_get_contents($filePath));
+			$this->openStream($stream);
+		}
+		else
+		{
+			throw new ImageHandlerException('File or stream is not readable.');
+		}
 		
 		$this->charMapCount = count(ImageHandler::$charMap);
 	}
 	
+	public function openStream($stream)
+	{
+		if(($this->image = imagecreatefromstring($stream))===FALSE)
+		{
+			throw new ImageHandlerException('Unknown file type. Supported file types: jpg, png, gif.');
+		}		
+	}
+	
 	public function openFile($filePath)
 	{
-		if(!is_file($filePath))
-		{
-			throw new ImageHandlerException('File is not readable.');
-		}
-		
 		switch($this->getFileExtensionByFileName($filePath))
 		{
 			case 'jpg':
@@ -46,8 +61,8 @@ class ImageHandler implements IImageHandler
 				$this->image = imagecreatefromgif($filePath);		
 			break;
 		
-			default:
-				throw new ImageHandlerException('Unknown file type. Supported file types: jpg, png, gif');
+			default:							
+				throw new ImageHandlerException('Unknown file type. Supported file types: jpg, png, gif.');				
 			break;
 		}
 	}
