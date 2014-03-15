@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="SuperClosure" tests="13" assertions="35" failures="0" errors="0" time="3.350959">
-    <testsuite name="Moszkva\CGraph\Test\BuilderTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\CGraphBuilderTest.php" namespace="Moszkva\CGraph\Test" fullPackage="Moszkva.CGraph.Test" tests="4" assertions="5" failures="0" errors="0" time="0.037387">
-      <testcase name="testSetCanvasSize" class="Moszkva\CGraph\Test\BuilderTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\CGraphBuilderTest.php" line="11" assertions="2" time="0.025005"/>
-      <testcase name="testSetPoint" class="Moszkva\CGraph\Test\BuilderTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\CGraphBuilderTest.php" line="24" assertions="1" time="0.005643"/>
-      <testcase name="testSetBackgroundCharacter" class="Moszkva\CGraph\Test\BuilderTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\CGraphBuilderTest.php" line="37" assertions="1" time="0.003218"/>
-      <testcase name="testRender" class="Moszkva\CGraph\Test\BuilderTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\CGraphBuilderTest.php" line="48" assertions="1" time="0.003521"/>
+  <testsuite name="SuperClosure" tests="15" assertions="38" failures="0" errors="0" time="5.588971">
+    <testsuite name="Moszkva\CGraph\Test\BuilderTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\CGraphBuilderTest.php" namespace="Moszkva\CGraph\Test" fullPackage="Moszkva.CGraph.Test" tests="4" assertions="5" failures="0" errors="0" time="0.046469">
+      <testcase name="testSetCanvasSize" class="Moszkva\CGraph\Test\BuilderTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\CGraphBuilderTest.php" line="11" assertions="2" time="0.031911"/>
+      <testcase name="testSetPoint" class="Moszkva\CGraph\Test\BuilderTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\CGraphBuilderTest.php" line="24" assertions="1" time="0.006484"/>
+      <testcase name="testSetBackgroundCharacter" class="Moszkva\CGraph\Test\BuilderTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\CGraphBuilderTest.php" line="37" assertions="1" time="0.004589"/>
+      <testcase name="testRender" class="Moszkva\CGraph\Test\BuilderTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\CGraphBuilderTest.php" line="48" assertions="1" time="0.003485"/>
     </testsuite>
-    <testsuite name="Moszkva\CGraph\Test\FileFactoryTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\FileFactoryTest.php" namespace="Moszkva\CGraph\Test" fullPackage="Moszkva.CGraph.Test" tests="2" assertions="11" failures="0" errors="0" time="3.267473">
-      <testcase name="testCreateResizing" class="Moszkva\CGraph\Test\FileFactoryTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\FileFactoryTest.php" line="10" assertions="2" time="2.029015"/>
-      <testcase name="testCreateProduct" class="Moszkva\CGraph\Test\FileFactoryTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\FileFactoryTest.php" line="20" assertions="9" time="1.238458"/>
+    <testsuite name="Moszkva\CGraph\Test\FileFactoryTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\FileFactoryTest.php" namespace="Moszkva\CGraph\Test" fullPackage="Moszkva.CGraph.Test" tests="2" assertions="11" failures="0" errors="0" time="3.259863">
+      <testcase name="testCreateResizing" class="Moszkva\CGraph\Test\FileFactoryTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\FileFactoryTest.php" line="10" assertions="2" time="2.032240"/>
+      <testcase name="testCreateProduct" class="Moszkva\CGraph\Test\FileFactoryTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\FileFactoryTest.php" line="20" assertions="9" time="1.227623"/>
     </testsuite>
-    <testsuite name="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" namespace="Moszkva\CGraph\Test" fullPackage="Moszkva.CGraph.Test" tests="7" assertions="19" failures="0" errors="0" time="0.046099">
-      <testcase name="testOpenFile" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="9" assertions="3" time="0.007782"/>
-      <testcase name="testOpenFileUnknownFileTypeError" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="37" assertions="1" time="0.007993"/>
-      <testcase name="testOpenFileNoReadableFileError" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="46" assertions="2" time="0.005166"/>
-      <testcase name="testResize" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="61" assertions="2" time="0.005007"/>
-      <testcase name="testResizeError" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="74" assertions="1" time="0.004318"/>
-      <testcase name="testGetColorAt" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="82" assertions="3" time="0.008050"/>
-      <testcase name="testGetCharByCoordinate" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="98" assertions="7" time="0.007783"/>
+    <testsuite name="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" namespace="Moszkva\CGraph\Test" fullPackage="Moszkva.CGraph.Test" tests="9" assertions="22" failures="0" errors="0" time="2.282639">
+      <testcase name="testOpenFile" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="9" assertions="3" time="0.007805"/>
+      <testcase name="testOpenStream" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="27" assertions="1" time="1.410278"/>
+      <testcase name="testOpenFileUnknownFileTypeError" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="37" assertions="1" time="0.011248"/>
+      <testcase name="testOpenFileNoReadableFileError" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="46" assertions="2" time="0.006831"/>
+      <testcase name="testOpenStreamFileTypeError" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="56" assertions="2" time="0.809017"/>
+      <testcase name="testResize" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="61" assertions="2" time="0.012013"/>
+      <testcase name="testResizeError" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="74" assertions="1" time="0.008643"/>
+      <testcase name="testGetColorAt" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="82" assertions="3" time="0.008469"/>
+      <testcase name="testGetCharByCoordinate" class="Moszkva\CGraph\Test\ImageHandlerTest" file="C:\Users\Gabor\Documents\GitHub\CGraph\tests\Moszkva\CGraph\Test\ImageHandlerTest.php" line="98" assertions="7" time="0.008335"/>
     </testsuite>
   </testsuite>
 </testsuites>
