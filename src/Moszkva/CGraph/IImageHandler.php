@@ -4,8 +4,6 @@ namespace Moszkva\CGraph;
 
 interface IImageHandler
 {
-	public function openFile($filePath);
-	public function openStream($stream);
 	public function getImageWidth();
 	public function getImageHeight();
 	public function getColorAt($x, $y);

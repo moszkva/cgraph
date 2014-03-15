@@ -3,16 +3,11 @@
 namespace Moszkva\CGraph;
 
 class FileFactory
-{
+{	
 	/**
-	 * @var ImageHandler
+	 * @var IImageHandler 
 	 */
-	private $CGraphImageHandler;
-	
-	/**
-	 * @var string 
-	 */
-	private $sourceFilePath;
+	private $ImageHandler;
 	
 	/**
 	 * @var integer 
@@ -24,50 +19,48 @@ class FileFactory
 	 */
 	private $maxHeight			= 75;
 	
-	public function __construct($sourceFilePath)
+	public function __construct(IImageHandler $ImageHandler)
 	{
-		$this->sourceFilePath = $sourceFilePath;
+		$this->ImageHandler = $ImageHandler;
 	}
 	
-	public function getCGraphImageHandler()
+	public function getImageHandler()
 	{
-		return $this->CGraphImageHandler;
+		return $this->ImageHandler;
 	}
 	
 	public function create($outputFilePath = '')
-	{
-		$this->CGraphImageHandler	= new ImageHandler($this->sourceFilePath);
-		
+	{	
 		$this->initImage();
 		
-		$width			= $this->CGraphImageHandler->getImageWidth();
-		$height			= $this->CGraphImageHandler->getImageHeight();	
+		$width			= $this->getImageHandler()->getImageWidth();
+		$height			= $this->getImageHandler()->getImageHeight();	
 		
-		$CGraphBuilder	= new Builder();
+		$Builder	= new Builder();
 		
-		$CGraphBuilder->setBackgroundCharacter('-');		
-		$CGraphBuilder->setCanvasSize($width, $height);
+		$Builder->setBackgroundCharacter('-');		
+		$Builder->setCanvasSize($width, $height);
 
 		for($y=0; $y <= $height-1; $y++)
 		{
 			for($x=0; $x <= $width-1; $x++)
 			{		
-				$CGraphBuilder->setPoint(new Point(new Coordinate($x, $y), $this->CGraphImageHandler->getCharByCoordinate($x, $y)));
+				$Builder->setPoint(new Point(new Coordinate($x, $y), $this->getImageHandler()->getCharByCoordinate($x, $y)));
 			}
 		}
 		
 		if(trim($outputFilePath)=='')
 		{
-			return $CGraphBuilder->render(true);
+			return $Builder->render(true);
 		}
 		
-		file_put_contents($outputFilePath, $CGraphBuilder->render(true));
+		file_put_contents($outputFilePath, $Builder->render(true));
 	}
 	
 	public function initImage()
 	{
-		$width			= $this->CGraphImageHandler->getImageWidth();
-		$height			= $this->CGraphImageHandler->getImageHeight();	
+		$width			= $this->getImageHandler()->getImageWidth();
+		$height			= $this->getImageHandler()->getImageHeight();	
 		
 		if($width > $this->maxWidth)
 		{
@@ -80,7 +73,7 @@ class FileFactory
 			
 			$height = $rate * $height;
 			
-			$this->CGraphImageHandler->resize($width, $height);
+			$this->getImageHandler()->resize($width, $height);
 		}
 		
 		if($height > $this->maxHeight)
@@ -93,10 +86,10 @@ class FileFactory
 			$width	= $rate * $width;
 			$height	= $this->maxHeight;
 
-			$this->CGraphImageHandler->resize($width, $height);
+			$this->getImageHandler()->resize($width, $height);
 		}
 		
-		$this->CGraphImageHandler->setContrast(-90);
+		$this->getImageHandler()->setContrast(-90);
 	}
 }
 

@@ -2,52 +2,13 @@
 
 namespace Moszkva\CGraph\Test;
 
+use \Moszkva\CGraph\IImage;
+use \Moszkva\CGraph\Image;
+use Moszkva\CGraph\IImageHandler;
 use \Moszkva\CGraph\ImageHandler;
 
 class ImageHandlerTest extends \PHPUnit_Framework_TestCase 
 {
-	public function testOpenFile()
-	{
-		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/empty.jpg');
-		
-		$this->assertEquals(10, $CGraphImageHandler->getImageWidth());
-		
-		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/empty.png');
-		
-		$this->assertEquals(10, $CGraphImageHandler->getImageHeight());
-		
-		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/empty.gif');
-		
-		$this->assertEquals(10, $CGraphImageHandler->getImageWidth());	
-	}
-	
-	/**
-	 * @group net
-	 */
-	public function testOpenStream()
-	{
-		$CGraphImageHandler = new ImageHandler('https://raw.github.com/moszkva/cgraph/master/tests/Moszkva/CGraph/Test/resource/empty.jpg');
-		
-		$this->assertEquals(10, $CGraphImageHandler->getImageWidth());		
-	}
-	
-	/**
-	 * @expectedException \Moszkva\CGraph\ImageHandlerException
-	 */
-	public function testOpenFileUnknownFileTypeError()
-	{
-		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/empty.bmp');		
-	}
-	
-	/**
-	 * @expectedException \Moszkva\CGraph\ImageHandlerException
-	 * @expectedExceptionMessage File or stream is not readable. 
-	 */
-	public function testOpenFileNoReadableFileError()
-	{
-		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/does_not_exists');		
-	}
-	
 	/**
 	 * @expectedException \Moszkva\CGraph\ImageHandlerException
 	 * @expectedExceptionMessage Unknown file type. Supported file types: jpg, png, gif.
@@ -55,12 +16,12 @@ class ImageHandlerTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testOpenStreamFileTypeError()
 	{
-		$CGraphImageHandler = new ImageHandler('https://github.com/moszkva/cgraph/raw/master/tests/Moszkva/CGraph/Test/resource/empty.bmp');		
+		$CGraphImageHandler = new ImageHandler(new Image('https://github.com/moszkva/cgraph/raw/master/tests/Moszkva/CGraph/Test/resource/empty.bmp'));		
 	}	
 	
 	public function testResize()
 	{
-		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/empty.jpg');
+		$CGraphImageHandler = new ImageHandler((new Image(__DIR__. '/resource/empty.jpg')));
 		
 		$CGraphImageHandler->resize(5, 5);
 		
@@ -73,7 +34,7 @@ class ImageHandlerTest extends \PHPUnit_Framework_TestCase
 	 */	
 	public function testResizeError()
 	{
-		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/empty.jpg');
+		$CGraphImageHandler = new ImageHandler((new Image(__DIR__. '/resource/empty.jpg')));
 		
 		@$CGraphImageHandler->resize(-10, 0);
 	}
@@ -81,15 +42,15 @@ class ImageHandlerTest extends \PHPUnit_Framework_TestCase
 	
 	public function testGetColorAt()
 	{
-		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/color_red.jpg');
+		$CGraphImageHandler = new ImageHandler((new Image(__DIR__. '/resource/color_red.jpg')));
 		
 		$this->assertEquals(imagecolorresolve ($CGraphImageHandler->getImage(), 254, 0, 0), $CGraphImageHandler->getColorAt(1, 1));
 		
-		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/color_green.jpg');
+		$CGraphImageHandler = new ImageHandler((new Image(__DIR__. '/resource/color_green.jpg')));
 		
 		$this->assertEquals(imagecolorresolve ($CGraphImageHandler->getImage(), 0, 255, 1), $CGraphImageHandler->getColorAt(1, 1));		
 		
-		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/color_blue.jpg');
+		$CGraphImageHandler = new ImageHandler((new Image(__DIR__. '/resource/color_blue.jpg')));
 		
 		$this->assertEquals(imagecolorresolve ($CGraphImageHandler->getImage(), 0, 0, 254), $CGraphImageHandler->getColorAt(1, 1));			
 		
@@ -97,7 +58,7 @@ class ImageHandlerTest extends \PHPUnit_Framework_TestCase
 	
 	public function testGetCharByCoordinate()
 	{
-		$CGraphImageHandler = new ImageHandler(__DIR__. '/resource/multi_colors.jpg');		
+		$CGraphImageHandler = new ImageHandler((new Image(__DIR__. '/resource/multi_colors.jpg')));		
 		
 		$this->assertEquals($CGraphImageHandler->getCharByCoordinate(0, 0), $CGraphImageHandler->getCharByCoordinate(49, 49));
 
