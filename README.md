@@ -3,6 +3,10 @@ CGraph
 
 ##ASCII image generator##
 
+##Visit generated output##
+https://github.com/moszkva/cgraph/blob/master/generated_sample.txt
+  
+
 
 https://packagist.org/packages/moszkva/cgraph
 
