@@ -11,11 +11,18 @@ class Image implements IImage
 	 */
 	private $image;
 	
+	/**
+	 * {@inheritdoc}
+	 */
 	public function __construct($source)
 	{
 		$this->create($source);
 	}
 	
+	/**
+	 * {@inheritdoc}
+	 * @throws ImageHandlerException
+	 */
 	public function create($source)
 	{
 		if(is_file($source))
@@ -32,11 +39,18 @@ class Image implements IImage
 		}		
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
 	public function getImage()
 	{
 		return $this->image;
 	}
 	
+	/**
+	 * @param string $stream
+	 * @throws ImageHandlerException
+	 */
 	private function openStream($stream)
 	{
 		if(($this->image = @imagecreatefromstring($stream))===FALSE)
@@ -45,6 +59,10 @@ class Image implements IImage
 		}		
 	}
 	
+	/**
+	 * @param string $filePath
+	 * @throws ImageHandlerException
+	 */	
 	private function openFile($filePath)
 	{
 		switch($this->getFileExtensionByFileName($filePath))
@@ -68,6 +86,10 @@ class Image implements IImage
 		}
 	}
 	
+	/**
+	 * @param string $fileName
+	 * @return type
+	 */
 	private function getFileExtensionByFileName($fileName)
 	{
 		$fileName = basename($fileName);

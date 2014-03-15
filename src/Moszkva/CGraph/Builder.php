@@ -4,19 +4,42 @@ namespace Moszkva\CGraph;
 
 class Builder
 {
+	/**
+	 * @var char
+	 */
 	private $backgroundCharacter	= ' ';
 	private $points					= array();
+	
+	/**
+	 * @var integer
+	 */
 	private $numOfVerticalChars		= 100;
+	
+	/**
+	 * @var integer
+	 */
 	private $numOfHorizontalChars	= 100;
+	
+	/**
+	 * @var string
+	 */
 	private $newLineSequence		= PHP_EOL;
 	
-	public function setPoint(Point $CGraphPoint)
+	/**
+	 * @param \Moszkva\CGraph\Point $Point
+	 * @return \Moszkva\CGraph\Builder
+	 */
+	public function setPoint(Point $Point)
 	{
-		$this->points[$CGraphPoint->getCGraphCoordinate()->x][$CGraphPoint->getCGraphCoordinate()->y] = $CGraphPoint;
+		$this->points[$Point->getCoordinate()->x][$Point->getCoordinate()->y] = $Point;
 		
 		return $this;
 	}
 	
+	/**
+	 * @param char $backgroundCharacter
+	 * @return \Moszkva\CGraph\Builder
+	 */
 	public function setBackgroundCharacter($backgroundCharacter)
 	{
 		$this->backgroundCharacter = $backgroundCharacter;
@@ -24,11 +47,19 @@ class Builder
 		return $this;
 	}
 	
+	/**
+	 * @return char
+	 */
 	public function getBackgroundCharacter()
 	{
 		return $this->backgroundCharacter;
 	}
 	
+	/**
+	 * @param integer $numOfHorizontalChars
+	 * @param integer $numOfVerticalChars
+	 * @return \Moszkva\CGraph\Builder
+	 */
 	public function setCanvasSize($numOfHorizontalChars, $numOfVerticalChars)
 	{
 		$this->numOfVerticalChars	= (int)$numOfVerticalChars;
@@ -37,6 +68,10 @@ class Builder
 		return $this;
 	}
 	
+	/**
+	 * @param boolean $onlyReturn
+	 * @return string
+	 */
 	public function render($onlyReturn = false)
 	{
 		$map = "";

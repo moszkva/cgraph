@@ -4,20 +4,31 @@ namespace Moszkva\CGraph;
 
 class Point
 {
-	private $CGraphCoordinate;
+	/**
+	 * @var Coordinate 
+	 */
+	private $coordinate;
+	
+	/**
+	 *
+	 * @var char
+	 */
 	private $char;
 	
-	public function __construct(Coordinate $CGraphCoordinate, $char = "O")
+	/**
+	 * @param \Moszkva\CGraph\Coordinate $coordinate
+	 * @param char $char
+	 */
+	public function __construct(Coordinate $coordinate, $char = "O")
 	{
-		$this->CGraphCoordinate = $CGraphCoordinate;
-		$this->char				= $char;
+		$this->coordinate	= $coordinate;
+		$this->char			= $char;
 	}
 	
-	public function getCGraphCoordinate()
+	public function getCoordinate()
 	{
-		return $this->CGraphCoordinate;
+		return $this->coordinate;
 	}
-
 	public function getChar()
 	{
 		return $this->char;

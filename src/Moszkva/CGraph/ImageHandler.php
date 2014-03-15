@@ -17,27 +17,45 @@ class ImageHandler implements IImageHandler
 	
 	private $charMapCount;
 	
+	/**
+	 * @param \Moszkva\CGraph\IImage $image
+	 */
 	public function __construct(IImage $image)
 	{
 		$this->image		= $image->getImage();
 		$this->charMapCount = count(ImageHandler::$charMap);
 	}
 	
+	/**
+	 * @return integer
+	 */
 	public function getImageWidth()
 	{
 		return imagesx($this->image);
 	}
 	
+	/**
+	 * @return integer
+	 */
 	public function getImageHeight()
 	{
 		return imagesy($this->image);
 	}	
 	
+	/**
+	 * @param integer $x
+	 * @param integer $y
+	 * @return integer
+	 */
 	public function getColorAt($x, $y)
 	{
 		return imagecolorat($this->image, $x, $y);
 	}
 	
+	/**
+	 * 
+	 * @param integer $contrast ( Max: -100, Min: 100)
+	 */
 	public function setContrast($contrast)
 	{
 		imagefilter($this->image, IMG_FILTER_CONTRAST, $contrast);
@@ -51,6 +69,11 @@ class ImageHandler implements IImageHandler
 		return ImageHandler::$charMap;
 	}
 		
+	/**
+	 * @param integer $newWidth
+	 * @param integer $newHeight
+	 * @throws ImageHandlerException
+	 */
 	public function resize($newWidth, $newHeight)
 	{
 		$imageTEMP = imagecreatetruecolor($newWidth, $newHeight);
@@ -64,7 +87,12 @@ class ImageHandler implements IImageHandler
 			throw new ImageHandlerException('Image resizing failed.');
 		}
 	}
-		
+	
+	/**
+	 * @param integer $x
+	 * @param integer $y
+	 * @return char
+	 */
 	public function getCharByCoordinate($x, $y)
 	{
 		$rgb = $this->getColorAt($x, $y);

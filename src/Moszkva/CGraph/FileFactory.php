@@ -19,6 +19,9 @@ class FileFactory
 	 */
 	private $maxHeight			= 75;
 	
+	/**
+	 * @param \Moszkva\CGraph\IImageHandler $ImageHandler
+	 */
 	public function __construct(IImageHandler $ImageHandler)
 	{
 		$this->ImageHandler = $ImageHandler;
@@ -29,6 +32,10 @@ class FileFactory
 		return $this->ImageHandler;
 	}
 	
+	/**
+	 * @param string $outputFilePath
+	 * @return type
+	 */
 	public function create($outputFilePath = '')
 	{	
 		$this->initImage();
