@@ -21,6 +21,6 @@ Usage:
 
 Example:
   
-  CGraph test.jpg >> image.txt
+  CGraph https://raw.github.com/moszkva/cgraph/master/tests/Moszkva/CGraph/Test/resource/test.jpg >> image.txt
   
 
