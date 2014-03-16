@@ -2,7 +2,7 @@
 
 namespace Moszkva\CGraph;
 
-class ImageHandler implements IImageHandler
+class ImageHandler implements Interfaces\ImageHandler
 {
 	/**
 	 * @var Resource
@@ -18,9 +18,9 @@ class ImageHandler implements IImageHandler
 	private $charMapCount;
 	
 	/**
-	 * @param \Moszkva\CGraph\IImage $image
+	 * @param \Moszkva\CGraph\Image $image
 	 */
-	public function __construct(IImage $image)
+	public function __construct(Image $image)
 	{
 		$this->image		= $image->getImage();
 		$this->charMapCount = count(ImageHandler::$charMap);

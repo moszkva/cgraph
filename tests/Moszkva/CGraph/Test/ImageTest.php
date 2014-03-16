@@ -32,7 +32,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
 	}
 	
 	/**
-	 * @expectedException \Moszkva\CGraph\ImageHandlerException
+	 * @expectedException \Moszkva\CGraph\Exceptions\ImageHandlerException
 	 */
 	public function testOpenFileUnknownFileTypeError()
 	{
@@ -40,7 +40,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
 	}
 	
 	/**
-	 * @expectedException \Moszkva\CGraph\ImageHandlerException
+	 * @expectedException \Moszkva\CGraph\Exceptions\ImageHandlerException
 	 * @expectedExceptionMessage File or stream is not readable. 
 	 */
 	public function testOpenFileNoReadableFileError()
@@ -49,7 +49,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
 	}
 	
 	/**
-	 * @expectedException \Moszkva\CGraph\ImageHandlerException
+	 * @expectedException \Moszkva\CGraph\Exceptions\ImageHandlerException
 	 * @expectedExceptionMessage Unknown file type. Supported file types: jpg, png, gif.
 	 * @group net
 	 */

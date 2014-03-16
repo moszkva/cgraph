@@ -3,9 +3,9 @@
 namespace Moszkva\CGraph\Test;
 
 use Moszkva\CGraph\FileFactory;
-use Moszkva\CGraph\IImage;
+//use Moszkva\CGraph\Interfaces\Image;
 use Moszkva\CGraph\Image;
-use Moszkva\CGraph\IImageHandler;
+//use Moszkva\CGraph\Interfaces\ImageHandler;
 use Moszkva\CGraph\ImageHandler;
 
 class FileFactoryTest extends \PHPUnit_Framework_TestCase 

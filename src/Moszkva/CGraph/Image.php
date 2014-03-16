@@ -2,9 +2,7 @@
 
 namespace Moszkva\CGraph;
 
-use Moszkva\CGraph\IImage;
-
-class Image implements IImage
+class Image implements Interfaces\Image
 {
 	/**
 	 * @var resource 
@@ -35,7 +33,7 @@ class Image implements IImage
 		}
 		else
 		{
-			throw new ImageHandlerException('File or stream is not readable.');
+			throw new Exceptions\ImageHandlerException('File or stream is not readable.');
 		}		
 	}
 
@@ -55,7 +53,7 @@ class Image implements IImage
 	{
 		if(($this->image = @imagecreatefromstring($stream))===FALSE)
 		{
-			throw new ImageHandlerException('Unknown file type. Supported file types: jpg, png, gif.');
+			throw new Exceptions\ImageHandlerException('Unknown file type. Supported file types: jpg, png, gif.');
 		}		
 	}
 	
@@ -81,7 +79,7 @@ class Image implements IImage
 			break;
 		
 			default:							
-				throw new ImageHandlerException('Unknown file type. Supported file types: jpg, png, gif.');				
+				throw new Exceptions\ImageHandlerException('Unknown file type. Supported file types: jpg, png, gif.');				
 			break;
 		}
 	}

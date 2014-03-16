@@ -2,12 +2,10 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Moszkva\CGraph\IImage;
 use Moszkva\CGraph\Image;
-use Moszkva\CGraph\IImageHandler;
 use Moszkva\CGraph\ImageHandler;
 use Moszkva\CGraph\FileFactory;
-use Moszkva\CGraph\Exception;
+use Moszkva\CGraph\Exceptions\Exception;
 
 try
 {

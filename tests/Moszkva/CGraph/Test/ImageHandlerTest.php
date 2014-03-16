@@ -2,15 +2,15 @@
 
 namespace Moszkva\CGraph\Test;
 
-use \Moszkva\CGraph\IImage;
+//use \Moszkva\CGraph\Image;
 use \Moszkva\CGraph\Image;
-use Moszkva\CGraph\IImageHandler;
+//use Moszkva\CGraph\ImageHandler;
 use \Moszkva\CGraph\ImageHandler;
 
 class ImageHandlerTest extends \PHPUnit_Framework_TestCase 
 {
 	/**
-	 * @expectedException \Moszkva\CGraph\ImageHandlerException
+	 * @expectedException \Moszkva\CGraph\Exceptions\ImageHandlerException
 	 * @expectedExceptionMessage Unknown file type. Supported file types: jpg, png, gif.
 	 * @group net
 	 */

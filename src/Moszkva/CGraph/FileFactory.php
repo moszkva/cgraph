@@ -5,7 +5,7 @@ namespace Moszkva\CGraph;
 class FileFactory
 {	
 	/**
-	 * @var IImageHandler 
+	 * @var Interfaces\ImageHandler 
 	 */
 	private $ImageHandler;
 	
@@ -20,9 +20,9 @@ class FileFactory
 	private $maxHeight			= 75;
 	
 	/**
-	 * @param \Moszkva\CGraph\IImageHandler $ImageHandler
+	 * @param \Moszkva\CGraph\Interfaces\ImageHandler $ImageHandler
 	 */
-	public function __construct(IImageHandler $ImageHandler)
+	public function __construct(Interfaces\ImageHandler $ImageHandler)
 	{
 		$this->ImageHandler = $ImageHandler;
 	}
