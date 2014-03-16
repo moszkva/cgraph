@@ -31,6 +31,8 @@ Installation via composer
 
 ##Example##
   
+Run:
+
   CGraph https://raw.github.com/moszkva/cgraph/master/tests/Moszkva/CGraph/Test/resource/test.jpg >> image.txt
   
 
